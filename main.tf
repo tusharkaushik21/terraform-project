@@ -16,3 +16,10 @@ module "ec2_group" {
   key_name            = aws_key_pair.example.key_name
   root_volume_size    = 25
 }
+resource "aws_instance" "myin" {
+instance_type = "t2.medium"
+ami = "ami-0c398cb65a93047f2"
+launch_template {
+  id = "lt-00e111d895be84204"
+}
+}
